@@ -13,8 +13,14 @@ body {
     margin-bottom : 15px;
 }
 
+a
+{
+    color: rgb(255, 111, 32);
+}
+
 .alink
 {
     text-decoration: none;
+    color: rgb(255, 111, 32);
 }
 
