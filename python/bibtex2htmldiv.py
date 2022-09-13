@@ -63,12 +63,35 @@ def normalize_authors(authors):
         else:
             authornames.append(author.strip())
     if len(authorlist)>1:
-        authornames[-1] = ' and '+authornames[-1]
+        # add " and " before last author
+        authornames[-1] = 'and '+authornames[-1]
     if len(authorlist)>2:
-        return ', '.join(authornames)
+        commasep = ', '.join(authornames[:-1])
+        return ' '.join((commasep,authornames[-1]))
     else:
         return ' '.join(authornames)
 
+def bibtexify_authors(authors):
+    """
+    Takes the authors string in format 
+    Sam P. Lan, Hans E. Ban and Dan Can
+    and converts it to
+    Lan, Sam P. and Ban, Hans E. and Can, Dan
+    """
+    if len(authors.split('and'))<2:
+        return authors
+    # determine the authorlist in format firstname(s) + lastname
+    commsep,last = authors.split('and')
+    commsep = commsep.split(',')
+    authorlist = [x.strip() for x in commsep] + [last.strip()]
+    # rewrite as and-separated list of lastname, firstname(s)
+    texlist = []
+    for x in authorlist:
+        firstnames,lastname = x.rsplit(' ',1)
+        x = ', '.join((lastname,firstnames))
+        texlist.append(x)
+        
+    return ' and '.join(texlist)
 
 def writebib(publications,filename='bib.rst'):
     """
@@ -148,6 +171,8 @@ def write_entry(pub,f):
         f.write(']\n')
 
         # add the bib-entry (unfolds upon click)
+        # make a and-separated list of lastname, firstname(s)
+        pub['author'] = bibtexify_authors(pub['author'])
         # create entry with pybtex
         bibz = pybtex.database.Entry(
             pub['reference_type'], [
