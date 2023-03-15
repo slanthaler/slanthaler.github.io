@@ -132,6 +132,7 @@ def write_entry(pub,f):
     f.write('<li>\n')
     f.write("{0}, </br> \n".format(pub['author']))
     f.write("{0}. </br>\n".format(pub['title']).replace('{','').replace('}',''))
+    ### journal article
     if 'journal' in pub.keys():
         f.write("<em>{0}".format(pub['journal']))
         if 'volume' in pub.keys():
@@ -141,6 +142,11 @@ def write_entry(pub,f):
             if 'pages' in pub.keys():
                 f.write(":{0}".format(pub['pages'].replace('&ndash;','-').replace('--','-')))
         f.write('</em>\n')
+    #### conference proceedings
+    elif (pub['reference_type'] == 'inproceedings'):
+        f.write("In <em>{0}".format(pub['booktitle']))
+        f.write('</em>\n')
+    #### preprint article
     elif 'eprint' in pub.keys():
         f.write("<em>Preprint, arXiv:" + pub['eprint'] + "</em>")
     if pub['year'] != '':

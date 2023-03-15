@@ -4,27 +4,33 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- Bootstrap CSS --> 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-
+    
     <!-- academicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
+    
     <!-- open all links in new tab -->
     <base target="_blank">
     
     <title>Samuel Lanthaler</title>
-
+    
     <div class="p-5  text-center bg-light" style="margin-top: 58px;">
       <h1 class="mb-3">Samuel Lanthaler</h1>
       <h4 class="mb-3">Computing + Mathematical Sciences</h4> 
       
       <h4 class="mb-3">California Institute of Technology</h4>
     </div>
-</div>
 
+    <!-- mathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+	    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
   </head>
 
   <body>
@@ -44,6 +50,10 @@
 	    <li class="nav-item">
 	      <a class="nav-link bk-href" href="#publications" target="_self">Publications</a>
 	    </li>
+<!--	    <li class="nav-item">
+	      <a class="nav-link bk-href" href="./notes.html" target="_self">Notes</a>
+	    </li>
+-->
 	  </ul>
 	  <!--
 	  <ul class="navbar-nav navbar-right">
@@ -89,6 +99,11 @@
 
 	  <table class="table table-borderless">
 	    <tr>
+	    <th scope="row" style="width:110px;white-space:nowrap;"> Mar 2023 </th>
+	    <td>My paper on <a href="https://link.springer.com/article/10.1007/s42985-023-00230-6" class="alink">concentration in vortex sheets</a> has been published in <a href="https://www.springer.com/journal/42985" class="alink">Partial Differential Equations and Applications</a>. This numerical work revisits a longstanding open problem in the existence theory of the 2D incompressible Euler equations.
+	    </td>
+	    </tr>
+	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Jan 2023 </th>
 	    <td>Our paper on <a href="https://openreview.net/forum?id=CrfhZAsJDsZ&noteId=Ok63AuYJ6jH" class="alink">operator learning for PDEs with discontinuous solutions</a> has been accepted at <a href="https://iclr.cc/Conferences/2023" class="alink">ICLR 2023</a>!
 	    </td>
@@ -98,11 +113,13 @@
 	    <td>I'm visiting UC Berkeley for a week long research stay, and giving a seminar on "Supervised learning in function space" in the <a href="https://berkeleyams.lbl.gov/fall22/" class="alink">Applied Math Seminar.</a>
 	    </td>
 	    </tr>
+	    <!--
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Oct 2022 </th>
 	    <td>We have a new preprint on <a href="https://arxiv.org/abs/2210.01074" class="alink">operator learning for PDEs with discontinuous solutions</a>, where we demonstrate some of the limitations of current architectures and show ways to overcome them!
 	    </td>
 	    </tr>
+	    -->
 
 <!--
 	    <tr>
@@ -215,23 +232,51 @@
 	  	  
 	    <!-- BIB START -->
 <ol reversed class="ol_refs"><li>
+Samuel  Lanthaler, </br> 
+On concentration in vortex sheets. </br>
+<em>Partial Differ. Equ. Appl., <strong>4</strong>(13)</em>
+ (2023)<br>
+[
+<a href="https://link.springer.com/article/10.1007/s42985-023-00230-6" target="_blank">url</a> | <a href="http://arxiv.org/abs/2004.01537" target="_blank">preprint</a> | 
+<a role="button" data-bs-toggle="collapse" href="#lanthaler2023concentration" aria-expanded="false" aria-controls="lanthaler2023concentration">bib</a> ]
+
+	<div class="collapse" id="lanthaler2023concentration">
+	<pre>
+@article{lanthaler2023concentration,
+    title = "On concentration in vortex sheets",
+    journal = "Partial Differ. Equ. Appl.",
+    volume = "4",
+    number = "13",
+    url = "https://link.springer.com/article/10.1007/s42985-023-00230-6",
+    year = "2023",
+    publisher = "Springer",
+    eprint = "2004.01537",
+    author = "Samuel  Lanthaler"
+}
+        </pre>
+        </div>
+        
+</li>
+
+<li>
 Samuel  Lanthaler, Roberto  Molinaro, Patrik  Hadorn and Siddhartha  Mishra, </br> 
 Nonlinear Reconstruction for Operator Learning of PDEs with Discontinuities. </br>
-<em>Preprint, arXiv:2210.01074</em> (2022)<br>
+In <em>11th International Conference on Learning Representations (ICLR)</em>
+ (2023)<br>
 [
-<a href="http://arxiv.org/abs/2210.01074" target="_blank">preprint</a> | 
+<a href="https://openreview.net/forum?id=CrfhZAsJDsZ" target="_blank">pdf</a> | <a href="http://arxiv.org/abs/2210.01074" target="_blank">preprint</a> | 
 <a role="button" data-bs-toggle="collapse" href="#LMHM2022" aria-expanded="false" aria-controls="LMHM2022">bib</a> ]
 
 	<div class="collapse" id="LMHM2022">
 	<pre>
-@misc{LMHM2022,
-    keywords = "Machine Learning (cs.LG), Numerical Analysis (math.NA), FOS: Computer and information sciences, FOS: Computer and information sciences, FOS: Mathematics, FOS: Mathematics",
+@inproceedings{LMHM2022,
+    abbr = "ICLR",
     title = "Nonlinear Reconstruction for Operator Learning of PDEs with Discontinuities",
-    publisher = "arXiv",
-    year = "2022",
-    copyright = "Creative Commons Attribution 4.0 International",
+    booktitle = "11th International Conference on Learning Representations (ICLR)",
+    publisher = "OpenReview.net",
+    year = "2023",
+    pdf = "https://openreview.net/forum?id=CrfhZAsJDsZ",
     eprint = "2210.01074",
-    archivePrefix = "arXiv",
     author = "Lanthaler, Samuel  and Molinaro, Roberto  and Hadorn, Patrik  and Mishra, Siddhartha "
 }
         </pre>
@@ -402,29 +447,6 @@ On the conservation of energy in two-dimensional incompressible flows. </br>
     publisher = "IOP Publishing",
     eprint = "2001.06195",
     author = "Lanthaler, Samuel  and Mishra, Siddhartha  and Parés-Pulido, Carlos "
-}
-        </pre>
-        </div>
-        
-</li>
-
-<li>
-Samuel  Lanthaler, </br> 
-On concentration in vortex sheets. </br>
-<em>Preprint, arXiv:2004.01537</em> (2020)<br>
-[
-<a href="http://arxiv.org/abs/2004.01537" target="_blank">preprint</a> | 
-<a role="button" data-bs-toggle="collapse" href="#lanthaler2020concentration" aria-expanded="false" aria-controls="lanthaler2020concentration">bib</a> ]
-
-	<div class="collapse" id="lanthaler2020concentration">
-	<pre>
-@misc{lanthaler2020concentration,
-    title = "On concentration in vortex sheets",
-    year = "2020",
-    eprint = "2004.01537",
-    archivePrefix = "arXiv",
-    primaryClass = "math.NA",
-    author = "Samuel  Lanthaler"
 }
         </pre>
         </div>
