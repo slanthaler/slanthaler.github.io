@@ -100,20 +100,27 @@
 	  <table class="table table-borderless">
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Mar 2023 </th>
+	    <td>New work on <a href="https://arxiv.org/abs/2303.16317" class="alink">Operator learning with PCA-Net: upper and lower complexity bounds</a> makes rigorous a notion of ``curse of dimensionality'' for PCA-Net, and it is shown that this curse cannot be avoided for general Lipschitz-continuous operators. In contrast, specific operators of interest are shown to possess additional structure, allowing the curse to be overcome.
+	    </td>
+	    </tr>
+	    <!---------->
+	    <tr>
+	    <th scope="row" style="width:110px;white-space:nowrap;"> Mar 2023 </th>
 	    <td>My paper on <a href="https://link.springer.com/article/10.1007/s42985-023-00230-6" class="alink">concentration in vortex sheets</a> has been published in <a href="https://www.springer.com/journal/42985" class="alink">Partial Differential Equations and Applications</a>. This numerical work revisits a longstanding open problem in the existence theory of the 2D incompressible Euler equations.
 	    </td>
 	    </tr>
+	    <!---------->
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Jan 2023 </th>
 	    <td>Our paper on <a href="https://openreview.net/forum?id=CrfhZAsJDsZ&noteId=Ok63AuYJ6jH" class="alink">operator learning for PDEs with discontinuous solutions</a> has been accepted at <a href="https://iclr.cc/Conferences/2023" class="alink">ICLR 2023</a>!
 	    </td>
 	    </tr>
+	    <!-- 
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Nov 2022 </th>
 	    <td>I'm visiting UC Berkeley for a week long research stay, and giving a seminar on "Supervised learning in function space" in the <a href="https://berkeleyams.lbl.gov/fall22/" class="alink">Applied Math Seminar.</a>
 	    </td>
 	    </tr>
-	    <!--
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Oct 2022 </th>
 	    <td>We have a new preprint on <a href="https://arxiv.org/abs/2210.01074" class="alink">operator learning for PDEs with discontinuous solutions</a>, where we demonstrate some of the limitations of current architectures and show ways to overcome them!
@@ -233,6 +240,29 @@
 	    <!-- BIB START -->
 <ol reversed class="ol_refs"><li>
 Samuel  Lanthaler, </br> 
+Operator learning with PCA-Net: upper and lower complexity bounds. </br>
+<em>Preprint, arXiv:2303.16317</em> (2023)<br>
+[
+<a href="http://arxiv.org/abs/2303.16317" target="_blank">preprint</a> | 
+<a role="button" data-bs-toggle="collapse" href="#lanthaler2023operator" aria-expanded="false" aria-controls="lanthaler2023operator">bib</a> ]
+
+	<div class="collapse" id="lanthaler2023operator">
+	<pre>
+@misc{lanthaler2023operator,
+    title = "Operator learning with PCA-Net: upper and lower complexity bounds",
+    year = "2023",
+    eprint = "2303.16317",
+    archivePrefix = "arXiv",
+    primaryClass = "cs.LG",
+    author = "Samuel  Lanthaler"
+}
+        </pre>
+        </div>
+        
+</li>
+
+<li>
+Samuel  Lanthaler, </br> 
 On concentration in vortex sheets. </br>
 <em>Partial Differ. Equ. Appl., <strong>4</strong>(13)</em>
  (2023)<br>
@@ -290,7 +320,7 @@ On Bayesian data assimilation for PDEs with ill-posed forward problems. </br>
 <em>Inverse Problems, <strong>38</strong>(8):085012</em>
  (2022)<br>
 [
-<a href="https://doi.org/10.1088/1361-6420/ac7acd" target="_blank">url</a> | 
+<a href="https://doi.org/10.1088/1361-6420/ac7acd" target="_blank">url</a> | <a href="http://arxiv.org/abs/2107.07593" target="_blank">preprint</a> | 
 <a role="button" data-bs-toggle="collapse" href="#LMW2022" aria-expanded="false" aria-controls="LMW2022">bib</a> ]
 
 	<div class="collapse" id="LMW2022">
@@ -304,6 +334,7 @@ On Bayesian data assimilation for PDEs with ill-posed forward problems. </br>
     volume = "38",
     number = "8",
     pages = "085012",
+    eprint = "2107.07593",
     title = "On {B}ayesian data assimilation for {PDEs} with ill-posed forward problems",
     journal = "Inverse Problems",
     abstract = "We study Bayesian data assimilation (filtering) for time-evolution Partial differential equations (PDEs), for which the underlying forward problem may be very unstable or ill-posed. Such PDEs, which include the Navier–Stokes equations of fluid dynamics, are characterized by a high sensitivity of solutions to perturbations of the initial data, a lack of rigorous global well-posedness results as well as possible non-convergence of numerical approximations. Under very mild and readily verifiable general hypotheses on the forward solution operator of such PDEs, we prove that the posterior measure expressing the solution of the Bayesian filtering problem is stable with respect to perturbations of the noisy measurements, and we provide quantitative estimates on the convergence of approximate Bayesian filtering distributions computed from numerical approximations. For the Navier–Stokes equations, our results imply uniform stability of the filtering problem even at arbitrarily small viscosity, when the underlying forward problem may become ill-posed, as well as the compactness of numerical approximants in a suitable metric on time-parametrized probability measures.",
