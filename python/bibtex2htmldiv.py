@@ -126,6 +126,8 @@ def write_section(title,reference_type,publications,f):
         f.write('<h4>'+title+'</h4>\n')
         for pub in these_pubs: write_entry(pub,f)
 
+
+        
 def write_entry(pub,f):
     pub['author'] = normalize_authors(pub['author'])
 
@@ -187,6 +189,9 @@ def write_entry(pub,f):
         bib_data = pybtex.database.BibliographyData({
             pub['pid']: bibz
             })
+        # replace the " " pairs by { } on each line
+        bib_entry = bib_data.to_string('bibtex').strip() 
+        bib_entry = replace_quotes_by_braces(bib_entry)
         # create html code for this entry
         bib_entry = """
 	<div class="collapse" id="{0}">
@@ -194,11 +199,30 @@ def write_entry(pub,f):
 {1}
         </pre>
         </div>
-        """.format(pub['pid'], bib_data.to_string('bibtex').strip())
+        """.format(pub['pid'], bib_entry)
+        #
         f.write(bib_entry)
         
     f.write('\n</li>\n\n')
 
+
+def replace_quotes_by_braces(string):
+    # split input string at newline characters
+    string = string.split("\n") 
+    # 
+    string_new = ""
+    for line in string:
+        # find indices containing " "
+        indx = [i for i, ltr in enumerate(line) if ltr == '"']
+        # replace the " " by { }
+        line_new = line
+        if len(indx)==2:
+            line_new = line[:indx[0]] + '{' + line[indx[0]+1:indx[1]] + '}' + line[indx[1]+1:]
+        # insert into new string
+        string_new += line_new + '\n'
+    return string_new
+
+    
 def sort_by_year(publications):
     """Takes a list of publications and return it sorted in reverse chronological order."""
     return sorted(publications, key=lambda p: p.setdefault('year',''),reverse=True)
