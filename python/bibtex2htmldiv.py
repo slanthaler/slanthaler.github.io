@@ -170,7 +170,7 @@ def write_entry(pub,f):
     if 'eprint' in pub.keys():
         if len(linkstring)>0:
             linkstring += ' | '
-        linkstring += '<a href="http://arxiv.org/abs/'+pub['eprint']+'" target="_blank">preprint</a>'
+        linkstring += '<a href="http://arxiv.org/pdf/'+pub['eprint']+'.pdf" target="_blank">preprint</a>'
     if len(linkstring)>0:
         # add bib to the linkstring
         linkstring += " | \n<a role=\"button\" data-bs-toggle=\"collapse\" href=\"#{0}\" aria-expanded=\"false\" aria-controls=\"{1}\">bib</a> ".format(pub['pid'],pub['pid'])
