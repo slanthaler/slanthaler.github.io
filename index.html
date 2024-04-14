@@ -98,24 +98,31 @@
 	  </h3>
 
 	  <table class="table table-borderless">
+	    <!---------->
+	    <tr>
+	    <th scope="row" style="width:110px;white-space:nowrap;"> April 2024 </th>
+	    <td>Our new preprint gives an overview of theoretical aspects of operator learning. This is joint with Nik Kovachki and Andrew Stuart, <a href="https://arxiv.org/pdf/2402.15715.pdf" class="alink">Operator Learning: Algorithms and Analysis</a>.
+	    </td>
+	    </tr>
+	    <!---------->
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Oct 2023 </th>
 	    <td>Our two submissions to NeurIPS 2023 got accepted, <a href="https://arxiv.org/abs/2305.17170" class="alink">Error Bounds for Learning with Vector-Valued Random Features</a> (spotlight) and <a href="https://arxiv.org/abs/2305.08753" class="alink">Neural Oscillators are Universal</a> (poster)!
 	    </td>
 	    </tr>
-	    <!---------->
+	    <!---
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> June 2023 </th>
 	    <td>New work addresses the <a href="https://arxiv.org/abs/2306.15924" class="alink">The curse of dimensionality in operator learning</a> (joint with Andrew Stuart). We show rigorously that operator learning on general classes of (e.g. Lipschitz continuous) operators, suffers from a curse of dimensionality: to achieve a desired accuracy epsilon, operator learning models generally need to be exponentially large in the inverse of the accuracy. Our result covers DeepONets, Fourier neural operators and PCA-Net, among others.
 	    </td>
 	    </tr>
-	    <!---------->
+	    <!---
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> May 2023 </th>
 	    <td>Our new preprint on <a href="https://arxiv.org/abs/2305.17170" class="alink">Error Bounds for Learning with Vector-Valued Random Features</a> (joint with Nick Nelsen) develops theory for operator learning with random features, including quantitative convergence rates and general asymptotic consistency results.
 	    </td>
 	    </tr>
-	    <!---------->
+	    <!---
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> May 2023 </th>
 	    <td>Oscillatory systems are fundamental in physics and biology. They have also found their way into ML via oscillator-based neural ODEs; We prove that <a href="https://arxiv.org/abs/2305.08753" class="alink">Neural Oscillators are Universal</a> (joint with T. Konstantin Rusch and Sid Mishra).
@@ -271,18 +278,41 @@
 	  	  
 	    <!-- BIB START -->
 <ol reversed class="ol_refs"><li>
+Nikola  Kovachki, Samuel  Lanthaler and Andrew M. Stuart, </br> 
+Operator Learning: Algorithms and Analysis. </br>
+<em>Preprint, arXiv:2402.15715</em> (2024)<br>
+[
+<a href="http://arxiv.org/pdf/2402.15715.pdf" target="_blank">preprint</a> | 
+<a role="button" data-bs-toggle="collapse" href="#kovachki2024operator" aria-expanded="false" aria-controls="kovachki2024operator">bib</a> ]
+
+	<div class="collapse" id="kovachki2024operator">
+	<pre>
+@article{kovachki2024operator,
+    title = {Operator {Learning}: Algorithms and {Analysis}},
+    year = {2024},
+    eprint = {2402.15715},
+    archivePrefix = {arXiv},
+    author = {Kovachki, Nikola  and Lanthaler, Samuel  and Stuart, Andrew M.}
+}
+
+        </pre>
+        </div>
+        
+</li>
+
+<li>
 Samuel  Lanthaler and Andrew M. Stuart, </br> 
-The curse of dimensionality in operator learning. </br>
-<em>Preprint, arXiv:2306.15924</em> (2023)<br>
+The Parametric Complexity of Operator Learning. </br>
+<em>Preprint, arXiv:2306.15924</em> (2024)<br>
 [
 <a href="http://arxiv.org/pdf/2306.15924.pdf" target="_blank">preprint</a> | 
-<a role="button" data-bs-toggle="collapse" href="#lanthaler2023curse" aria-expanded="false" aria-controls="lanthaler2023curse">bib</a> ]
+<a role="button" data-bs-toggle="collapse" href="#lanthaler2024parametric" aria-expanded="false" aria-controls="lanthaler2024parametric">bib</a> ]
 
-	<div class="collapse" id="lanthaler2023curse">
+	<div class="collapse" id="lanthaler2024parametric">
 	<pre>
-@misc{lanthaler2023curse,
-    title = {The curse of dimensionality in operator learning},
-    year = {2023},
+@misc{lanthaler2024parametric,
+    title = {The Parametric Complexity of Operator Learning},
+    year = {2024},
     eprint = {2306.15924},
     archivePrefix = {arXiv},
     primaryClass = {cs.LG},
@@ -297,19 +327,22 @@ The curse of dimensionality in operator learning. </br>
 <li>
 Samuel  Lanthaler and Nicholas H. Nelsen, </br> 
 Error Bounds for Learning with Vector-Valued Random Features. </br>
-<em>Preprint, arXiv:2305.17170</em> (2023)<br>
+In <em>Advances in Neural Information Processing Systems</em>
+ (2023)<br>
 [
-<a href="http://arxiv.org/pdf/2305.17170.pdf" target="_blank">preprint</a> | 
-<a role="button" data-bs-toggle="collapse" href="#lanthaler2023error" aria-expanded="false" aria-controls="lanthaler2023error">bib</a> ]
+<a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/e34d908241aef40440e61d2a27715424-Paper-Conference.pdf" target="_blank">url</a> | 
+<a role="button" data-bs-toggle="collapse" href="#LN2023randomfeatures" aria-expanded="false" aria-controls="LN2023randomfeatures">bib</a> ]
 
-	<div class="collapse" id="lanthaler2023error">
+	<div class="collapse" id="LN2023randomfeatures">
 	<pre>
-@misc{lanthaler2023error,
+@inproceedings{LN2023randomfeatures,
+    booktitle = {Advances in Neural Information Processing Systems},
+    pages = {71834--71861},
+    publisher = {Curran Associates, Inc.},
     title = {Error Bounds for Learning with Vector-Valued Random Features},
+    url = {https://proceedings.neurips.cc/paper\_files/paper/2023/file/e34d908241aef40440e61d2a27715424-Paper-Conference.pdf},
+    volume = {36},
     year = {2023},
-    eprint = {2305.17170},
-    archivePrefix = {arXiv},
-    primaryClass = {stat.ML},
     author = {Lanthaler, Samuel  and Nelsen, Nicholas H.}
 }
 
@@ -321,19 +354,22 @@ Error Bounds for Learning with Vector-Valued Random Features. </br>
 <li>
 Samuel  Lanthaler, T. Konstantin Rusch and Siddhartha  Mishra, </br> 
 Neural Oscillators are Universal. </br>
-<em>Preprint, arXiv:2305.08753</em> (2023)<br>
+In <em>Advances in Neural Information Processing Systems</em>
+ (2023)<br>
 [
-<a href="http://arxiv.org/pdf/2305.08753.pdf" target="_blank">preprint</a> | 
-<a role="button" data-bs-toggle="collapse" href="#lanthaler2023neural" aria-expanded="false" aria-controls="lanthaler2023neural">bib</a> ]
+<a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/923285deb805c3e14e1aeebc9854d644-Paper-Conference.pdf" target="_blank">url</a> | 
+<a role="button" data-bs-toggle="collapse" href="#lanthaler2023neuraloscillators" aria-expanded="false" aria-controls="lanthaler2023neuraloscillators">bib</a> ]
 
-	<div class="collapse" id="lanthaler2023neural">
+	<div class="collapse" id="lanthaler2023neuraloscillators">
 	<pre>
-@misc{lanthaler2023neural,
+@inproceedings{lanthaler2023neuraloscillators,
+    booktitle = {Advances in Neural Information Processing Systems},
+    pages = {46786--46806},
+    publisher = {Curran Associates, Inc.},
     title = {Neural Oscillators are Universal},
+    url = {https://proceedings.neurips.cc/paper\_files/paper/2023/file/923285deb805c3e14e1aeebc9854d644-Paper-Conference.pdf},
+    volume = {36},
     year = {2023},
-    eprint = {2305.08753},
-    archivePrefix = {arXiv},
-    primaryClass = {cs.NE},
     author = {Lanthaler, Samuel  and Rusch, T. Konstantin and Mishra, Siddhartha }
 }
 
@@ -369,19 +405,22 @@ The Nonlocal Neural Operator: Universal Approximation. </br>
 <li>
 Samuel  Lanthaler, </br> 
 Operator learning with PCA-Net: upper and lower complexity bounds. </br>
-<em>Preprint, arXiv:2303.16317</em> (2023)<br>
+<em>Journal of Machine Learning Research, <strong>24</strong>(318):1-67</em>
+ (2023)<br>
 [
-<a href="http://arxiv.org/pdf/2303.16317.pdf" target="_blank">preprint</a> | 
-<a role="button" data-bs-toggle="collapse" href="#lanthaler2023operator" aria-expanded="false" aria-controls="lanthaler2023operator">bib</a> ]
+<a href="http://jmlr.org/papers/v24/23-0478.html" target="_blank">url</a> | 
+<a role="button" data-bs-toggle="collapse" href="#lanthaler2023pcanet" aria-expanded="false" aria-controls="lanthaler2023pcanet">bib</a> ]
 
-	<div class="collapse" id="lanthaler2023operator">
+	<div class="collapse" id="lanthaler2023pcanet">
 	<pre>
-@misc{lanthaler2023operator,
+@article{lanthaler2023pcanet,
     title = {Operator learning with PCA-Net: upper and lower complexity bounds},
+    journal = {Journal of Machine Learning Research},
     year = {2023},
-    eprint = {2303.16317},
-    archivePrefix = {arXiv},
-    primaryClass = {cs.LG},
+    volume = {24},
+    number = {318},
+    pages = {1--67},
+    url = {http://jmlr.org/papers/v24/23-0478.html},
     author = {Samuel  Lanthaler}
 }
 
