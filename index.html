@@ -1,4 +1,6 @@
 <!doctype html>
+
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -97,41 +99,201 @@
 	    News
 	  </h3>
 
+	  <div id="newsTable">
+	    <table  id="newsEntriesTable">
+		<!-- Entries will be displayed here -->
+	    </table>
+	    <div style="text-align: right;">
+	      <button onclick="toggleArchive()">Show Archived News</button>
+	    </div>
+	  </div>
+
+	  <script>
+	    var newsEntriesData = [
+		{ 
+		    title: `April 2024`,
+		    content: `Our new preprint gives an overview of theoretical aspects of operator learning. This is joint with Nik Kovachki and Andrew Stuart, <a href="https://arxiv.org/pdf/2402.15715.pdf" class="alink">Operator Learning: Algorithms and Analysis</a>.`,
+		    status: `New`
+		},
+		{ 
+		    title: `Feb 2024`,
+		    content: `I gave a presentation at <a href="https://www.siam.org/conferences/cm/conference/uq24" class="alink">SIAM UQ24</a> in Trieste, Italy, in the Minisymposium on "Operator Learning in Uncertainty Quantification". Thank you, <a href="https://jakobzech.com/" class="alink">Jakob Zech</a>, <a href="https://mate.unipv.it/marcati/" class="alink">Carlo Marcati</a> and <a href="https://math.ethz.ch/sam/the-institute/people/christoph-schwab.html" class="alink">Christoph Schwab</a> for the opportunity to speak!
+<br>
+I'd also like to thank everyone for their great interest in our minisymposium on "Recent Advances in Scalable Active Learning and Optimal Experimental Design", co-organized with <a href="https://www.nicholashnelsen.com/" class="alink">Nick Nelsen</a> and <a href="https://raulastudillo.netlify.app/" class="alink">Raul Astudillo</a>!`,
+		    status: `New`
+		},
+		{ 
+		    title: `Feb 2024`,
+		    content: `I'm attending a workshop on <a href="https://mrc.umd.edu/programs/workshops/spring24/spring24-workshop-ml.html" class="alink">Scientific Machine Learning: Theory and Algorithms</a> at the University of Maryland. I'd like to thank the organizers, <a href="https://www.math.umd.edu/~mariakc/" class="alink">Maria Cameron</a>, <a href="https://people.clas.ufl.edu/chunmei-wang/" class="alink">Chunmei Wang</a> and <a href="https://haizhaoyang.github.io/" class="alink">Haizhao Yang</a> for the kind invitation to the Brin mathematics research center!`,
+		    status: `New`
+		},
+		{ 
+		    title: `Jan 2024`,
+		    content: `I gave a talk about operator learning at the <a href="https://jointmathematicsmeetings.org/meetings/national/jmm2024/2300_intro" class="alink">Joint Mathematics Meeting</a> in San Francisco. Thank you for the kind invitation to the organizers, <a href="https://www.linkedin.com/in/erin-c-s-acquesta-96714347/" class="alink">Erin Acquesta</a>, <a href="https://people.llnl.gov/bremer5" class="alink">Timo Bremer</a> and <a href="https://www.sandia.gov/ccr/staff/joseph-lee-hart/" class="alink">Joseph Hart</a>.`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `Oct 2023`,
+		    content: `Our two submissions to NeurIPS 2023 got accepted, <a href="https://arxiv.org/abs/2305.17170" class="alink">Error Bounds for Learning with Vector-Valued Random Features</a> (spotlight) and <a href="https://arxiv.org/abs/2305.08753" class="alink">Neural Oscillators are Universal</a> (poster)!`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `June 2023`,
+		    content: `New work addresses the <a href="https://arxiv.org/abs/2306.15924" class="alink">The curse of dimensionality in operator learning</a> (joint with Andrew Stuart). We show rigorously that operator learning on general classes of (e.g. Lipschitz continuous) operators, suffers from a curse of dimensionality: to achieve a desired accuracy epsilon, operator learning models generally need to be exponentially large in the inverse of the accuracy. Our result covers DeepONets, Fourier neural operators and PCA-Net, among others.`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `June 2023`,
+		    content: `New work addresses the <a href="https://arxiv.org/abs/2306.15924" class="alink">The curse of dimensionality in operator learning</a> (joint with Andrew Stuart). We show rigorously that operator learning on general classes of (e.g. Lipschitz continuous) operators, suffers from a curse of dimensionality: to achieve a desired accuracy epsilon, operator learning models generally need to be exponentially large in the inverse of the accuracy. Our result covers DeepONets, Fourier neural operators and PCA-Net, among others.`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `May 2023`,
+		    content: `Our new preprint on <a href="https://arxiv.org/abs/2305.17170" class="alink">Error Bounds for Learning with Vector-Valued Random Features</a> (joint with Nick Nelsen) develops theory for operator learning with random features, including quantitative convergence rates and general asymptotic consistency results.`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `May 2023`,
+		    content: `Oscillatory systems are fundamental in physics and biology. They have also found their way into ML via oscillator-based neural ODEs; We prove that <a href="https://arxiv.org/abs/2305.08753" class="alink">Neural Oscillators are Universal</a> (joint with T. Konstantin Rusch and Sid Mishra).`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `Apr 2023`,
+		    content: `We have a new preprint <a href="https://arxiv.org/abs/2304.13221" class="alink">The Nonlocal Neural Operator: Universal Approximation</a>, joint with Zongyi Li and Andrew Stuart. The working title of this work is "The average is good enough for universality in operator learning"; find out why, <a href="https://arxiv.org/abs/2304.13221" class="alink">here</a>!`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `Mar 2023`,
+		    content: `The new preprint <a href="https://arxiv.org/abs/2303.16317" class="alink">Operator learning with PCA-Net: upper and lower complexity bounds</a> makes rigorous a notion of "curse of dimensionality" for PCA-Net, and it is shown that this curse cannot be avoided for general Lipschitz-continuous operators. In contrast, specific operators of interest are shown to possess additional structure, allowing the curse to be overcome.`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `Mar 2023`,
+		    content: `My paper on <a href="https://link.springer.com/article/10.1007/s42985-023-00230-6" class="alink">concentration in vortex sheets</a> has been published in <a href="https://www.springer.com/journal/42985" class="alink">Partial Differential Equations and Applications</a>. This numerical work revisits a longstanding open problem in the existence theory of the 2D incompressible Euler equations.`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `Nov 2022`,
+		    content: `I'm visiting UC Berkeley for a week-long research stay, and giving a seminar on "Supervised learning in function space" in the <a href="https://berkeleyams.lbl.gov/fall22/" class="alink">Applied Math Seminar.</a>`,
+		    status: `Archived`
+		},
+		{ 
+		    title: `Oct 2022`,
+		    content: `We have a new preprint on <a href="https://arxiv.org/abs/2210.01074" class="alink">operator learning for PDEs with discontinuous solutions</a>, where we demonstrate some of the limitations of current architectures and show ways to overcome them!`,
+		    status: `Archived`
+		},
+		{
+		    title: `Sept 2022`,
+		    content: `I'm giving a talk on operator learning of discontinuous PDEs at <a href="https://meetings.siam.org/sess/dsp_talk.cfm?p=125324" class="alink">SIAM Mathematics of Data Science</a> in San Diego at the end of the month.`,
+		    status: `Archived`
+		},
+		{
+		    title: `Aug 2022`,
+		    content: `I have started my new postdoc position at Caltech! Looking forward to an exciting and productive time here in Pasadena!`,
+		    status: `Archived`
+		}
+	    ];
+
+
+	    // Initial population of new entries
+	    window.onload = function() {
+		var newsEntriesTable = document.getElementById('newsEntriesTable');
+		newsEntriesData.forEach(function(entry) {
+		    var row = document.createElement('tr');
+		    var titleCell = document.createElement('th');
+		    titleCell.setAttribute('scope', 'row');
+		    titleCell.style.width = '110px';
+		    titleCell.style.whiteSpace = 'nowrap';
+		    titleCell.textContent = entry.title;
+		    
+		    var contentCell = document.createElement('td');
+		    contentCell.innerHTML = entry.content;
+		    
+		    row.appendChild(titleCell);
+		    row.appendChild(contentCell);
+		    
+		    newsEntriesTable.appendChild(row);
+		    if (entry.status === 'Archived') {
+			row.classList.add('archived');
+			row.style.display = 'none';
+		    }
+		    console.log(row.innerHTML)
+		});
+
+	    };
+
+	    function toggleArchive() {
+		var rows = document.querySelectorAll('#newsEntriesTable tr');
+		var archiveButton = document.querySelector('button');
+
+		if (archiveButton.innerText === 'Show Archived News') {
+		    // Show archived news
+		    archiveButton.innerText = 'Hide Archived News';
+		    rows.forEach(function(row) {
+			if (row.classList.contains('archived')) {
+			    row.style.display = '';
+			}
+		    });
+		} else {
+		    // Hide archived news
+		    archiveButton.innerText = 'Show Archived News';
+		    rows.forEach(function(row) {
+			if (row.classList.contains('archived')) {
+			    row.style.display = 'none';
+			}
+		    });
+		}
+	    }
+	    
+	  </script>
+
+<!--	  
 	  <table class="table table-borderless">
-	    <!---------->
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> April 2024 </th>
 	    <td>Our new preprint gives an overview of theoretical aspects of operator learning. This is joint with Nik Kovachki and Andrew Stuart, <a href="https://arxiv.org/pdf/2402.15715.pdf" class="alink">Operator Learning: Algorithms and Analysis</a>.
 	    </td>
 	    </tr>
-	    <!---------->
 	    <tr>
+	    <th scope="row" style="width:110px;white-space:nowrap;">Feb 2024 </th>
+	    <td>I gave a presentation at <a href="https://www.siam.org/conferences/cm/conference/uq24" class="alink">SIAM UQ24</a> in Trieste, Italy, in the Minisymposium on "Operator Learning in Uncertainty Quantification". Thank you, <a href="https://jakobzech.com/" class="alink">Jakob Zech</a>, <a href="https://mate.unipv.it/marcati/" class="alink">Carlo Marcati</a> and <a href="https://math.ethz.ch/sam/the-institute/people/christoph-schwab.html" class="alink">Christoph Schwab</a> for the opportunity to speak!
+<br>
+I'd also like to thank everyone for their great interest in our minisymposium on "Recent Advances in Scalable Active Learning and Optimal Experimental Design", co-organized with <a href="https://www.nicholashnelsen.com/" class="alink">Nick Nelsen</a> and <a href="https://raulastudillo.netlify.app/" class="alink">Raul Astudillo</a> -- the room was about to burst!
+	    </td>
+	    </tr>
+	    <tr>
+	    <th scope="row" style="width:110px;white-space:nowrap;"> Feb 2024 </th>
+	    <td>I'm attending a workshop on <a href="https://mrc.umd.edu/programs/workshops/spring24/spring24-workshop-ml.html" class="alink">Scientific Machine Learning: Theory and Algorithms</a> at the University of Maryland. I'd like to thank the organizers, <a href="https://www.math.umd.edu/~mariakc/" class="alink">Maria Cameron</a>, <a href="https://people.clas.ufl.edu/chunmei-wang/" class="alink">Chunmei Wang</a> and <a href="https://haizhaoyang.github.io/" class="alink">Haizhao Yang</a> for the kind invitation to the Brin mathematics research center!
+	    </td>
+	    </tr>
+	    <tr>
+	    <th scope="row" style="width:110px;white-space:nowrap;"> Jan 2024 </th>
+	    <td>I gave a talk about operator learning at the <a href="https://jointmathematicsmeetings.org/meetings/national/jmm2024/2300_intro" class="alink">Joint Mathematics Meeting</a> in San Francisco. Thank you for the kind invitation to the organizers, <a href="https://www.linkedin.com/in/erin-c-s-acquesta-96714347/" class="alink">Erin Acquesta</a>, <a href="https://people.llnl.gov/bremer5" class="alink">Timo Bremer</a> and <a href="https://www.sandia.gov/ccr/staff/joseph-lee-hart/" class="alink">Joseph Hart</a>.
+	    </td>
+	    </tr>
+	    <tr class="expandable">
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Oct 2023 </th>
 	    <td>Our two submissions to NeurIPS 2023 got accepted, <a href="https://arxiv.org/abs/2305.17170" class="alink">Error Bounds for Learning with Vector-Valued Random Features</a> (spotlight) and <a href="https://arxiv.org/abs/2305.08753" class="alink">Neural Oscillators are Universal</a> (poster)!
 	    </td>
 	    </tr>
-	    <!---
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> June 2023 </th>
 	    <td>New work addresses the <a href="https://arxiv.org/abs/2306.15924" class="alink">The curse of dimensionality in operator learning</a> (joint with Andrew Stuart). We show rigorously that operator learning on general classes of (e.g. Lipschitz continuous) operators, suffers from a curse of dimensionality: to achieve a desired accuracy epsilon, operator learning models generally need to be exponentially large in the inverse of the accuracy. Our result covers DeepONets, Fourier neural operators and PCA-Net, among others.
 	    </td>
 	    </tr>
-	    <!---
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> May 2023 </th>
 	    <td>Our new preprint on <a href="https://arxiv.org/abs/2305.17170" class="alink">Error Bounds for Learning with Vector-Valued Random Features</a> (joint with Nick Nelsen) develops theory for operator learning with random features, including quantitative convergence rates and general asymptotic consistency results.
 	    </td>
 	    </tr>
-	    <!---
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> May 2023 </th>
 	    <td>Oscillatory systems are fundamental in physics and biology. They have also found their way into ML via oscillator-based neural ODEs; We prove that <a href="https://arxiv.org/abs/2305.08753" class="alink">Neural Oscillators are Universal</a> (joint with T. Konstantin Rusch and Sid Mishra).
 	    </td>
 	    </tr>
-	    <!--
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Apr 2023 </th>
-	    <td>We have a new preprint <a href="https://arxiv.org/abs/2304.13221" class="alink">The Nonlocal Neural Operator: Universal Approximation</a>, joint with Zongyi Li and Andrew Stuart. The working title of this work is ``The average is good enough for universality in operator learning''; find out why, <a href="https://arxiv.org/abs/2304.13221" class="alink">here</a>!
+	    <td>We have a new preprint <a href="https://arxiv.org/abs/2304.13221" class="alink">The Nonlocal Neural Operator: Universal Approximation</a>, joint with Zongyi Li and Andrew Stuart. The working title of this work is "The average is good enough for universality in operator learning"; find out why, <a href="https://arxiv.org/abs/2304.13221" class="alink">here</a>!
 	    </td>
 	    </tr>
 	    <tr>
@@ -144,8 +306,6 @@
 	    <td>My paper on <a href="https://link.springer.com/article/10.1007/s42985-023-00230-6" class="alink">concentration in vortex sheets</a> has been published in <a href="https://www.springer.com/journal/42985" class="alink">Partial Differential Equations and Applications</a>. This numerical work revisits a longstanding open problem in the existence theory of the 2D incompressible Euler equations.
 	    </td>
 	    </tr>
-	    -->
-	    <!-- 
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Jan 2023 </th>
 	    <td>Our paper on <a href="https://openreview.net/forum?id=CrfhZAsJDsZ&noteId=Ok63AuYJ6jH" class="alink">operator learning for PDEs with discontinuous solutions</a> has been accepted at <a href="https://iclr.cc/Conferences/2023" class="alink">ICLR 2023</a>!
@@ -161,9 +321,6 @@
 	    <td>We have a new preprint on <a href="https://arxiv.org/abs/2210.01074" class="alink">operator learning for PDEs with discontinuous solutions</a>, where we demonstrate some of the limitations of current architectures and show ways to overcome them!
 	    </td>
 	    </tr>
-	    -->
-
-<!--
 	    <tr>
 	    <th scope="row" style="width:110px;white-space:nowrap;"> Sept 2022 </th>
 	    <td>I'm giving a talk on operator learning of discontinuous PDEs at <a href="https://meetings.siam.org/sess/dsp_talk.cfm?p=125324" class="alink">SIAM Mathematics of Data Science</a> in San Diego at the end of the month.
@@ -174,9 +331,9 @@
 	    <td>I have started my new postdoc position at Caltech! Looking forward to an exciting and productive time here in Pasadena!
 	    </td>
 	    </tr>
--->
 	  </table>
-
+-->
+	  
 	  <hr class="my-4">
   
 	  <h3 id="cv">

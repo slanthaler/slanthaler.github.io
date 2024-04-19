@@ -1,7 +1,49 @@
+button {
+  background-color: white;
+  border: 1px solid rgb(255, 111, 32); /* Remove border */
+  color: black; /* White text */
+  padding: 10px 20px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Display as inline block */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 8px; /* Rounded corners */
+}
+
+button:hover {
+  background-color: rgb(255, 111, 32); 
+  color: white; /* White text */
+}
+
 table { border: none; border-collapse: collapse; }
 table td { border-left: 1px solid #000; }
 table td:first-child { border-left: none; }
 
+#newsEntriesTable th {
+    padding-bottom: 10px;
+    text-align: left;
+    vertical-align: top; /* Align content to the top */
+}
+#newsEntriesTable td {
+    padding-bottom: 10px;
+    /* border-bottom: 1px solid #ccc; /* Thin line */ 
+    text-align: left;
+    vertical-align: top; /* Align content to the top */
+}
+#newsEntriesTable td::after {
+  content: ""; /* Create a pseudo-element */
+  display: block; /* Make it a block element */
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc; /* Set the border style */
+  width: 50%; /* Adjust the width of the line */
+  margin: 0 auto; 
+}
+
+tbody.collapsed > tr {
+    visibility: collapse;
+}
 
 body {
     padding-bottom: 15em;
