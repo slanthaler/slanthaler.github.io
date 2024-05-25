@@ -134,8 +134,13 @@ def write_entry(pub,f):
     f.write('<li>\n')
     f.write("{0}, </br> \n".format(pub['author']))
     f.write("{0}. </br>\n".format(pub['title']).replace('{','').replace('}',''))
+    ### book chapter (?)
+    if pub['reference_type']=='incollection':
+        f.write(
+            f"In <em>{pub['series']}</em>"
+            )
     ### journal article
-    if 'journal' in pub.keys():
+    elif 'journal' in pub.keys():
         f.write("<em>{0}".format(pub['journal']))
         if 'volume' in pub.keys():
             f.write(", <strong>{0}</strong>".format(pub['volume']))
